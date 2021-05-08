@@ -1,0 +1,25 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "main",
+    "deps": [
+        "start-scene"
+    ],
+    "uuids": [
+        "91aad84e-51f1-4784-8deb-169d956b0752"
+    ],
+    "paths": {},
+    "scenes": {
+        "db://assets/scene.scene": "91aad84e-51f1-4784-8deb-169d956b0752"
+    },
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [
+        "91aad84e-51f1-4784-8deb-169d956b0752",
+        "0"
+    ],
+    "debug": true
+}

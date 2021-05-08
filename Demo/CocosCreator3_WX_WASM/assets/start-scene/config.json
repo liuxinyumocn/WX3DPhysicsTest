@@ -1,0 +1,52 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "start-scene",
+    "deps": [],
+    "uuids": [
+        "0b2f6ce66",
+        "1263d74c-8167-4928-91a6-4e2672411f47@2e76e",
+        "1263d74c-8167-4928-91a6-4e2672411f47@a804a",
+        "32bf5c83-d563-486b-ae68-b6bd96cb3fb0",
+        "32bf5c83-d563-486b-ae68-b6bd96cb3fb0@6c48a",
+        "7b5d6491-94d0-4ddd-aa7f-7a8e195ad4d3",
+        "8030afbf-ddb9-4a2b-a8e4-2ef41191e01c",
+        "91aad84e-51f1-4784-8deb-169d956b0752",
+        "a3cd009f-0ab0-420d-9278-b9fdab939bbc",
+        "c08af9c1-80c5-4e59-9d62-aa42d5992fbc",
+        "cfb10c84-2271-4fa3-a0ab-76fc30597cf3",
+        "fa153d3a-4038-4c08-a4db-3a3767ebf0f5",
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8"
+    ],
+    "paths": {
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8": [
+            "db:/internal/default_renderpipeline/builtin-forward",
+            "cc.RenderPipeline"
+        ]
+    },
+    "scenes": {
+        "db://assets/scene.scene": "91aad84e-51f1-4784-8deb-169d956b0752"
+    },
+    "packs": {
+        "0b2f6ce66": [
+            "1263d74c-8167-4928-91a6-4e2672411f47@2e76e",
+            "1263d74c-8167-4928-91a6-4e2672411f47@a804a",
+            "32bf5c83-d563-486b-ae68-b6bd96cb3fb0",
+            "32bf5c83-d563-486b-ae68-b6bd96cb3fb0@6c48a",
+            "7b5d6491-94d0-4ddd-aa7f-7a8e195ad4d3",
+            "8030afbf-ddb9-4a2b-a8e4-2ef41191e01c",
+            "91aad84e-51f1-4784-8deb-169d956b0752",
+            "a3cd009f-0ab0-420d-9278-b9fdab939bbc",
+            "c08af9c1-80c5-4e59-9d62-aa42d5992fbc",
+            "cfb10c84-2271-4fa3-a0ab-76fc30597cf3",
+            "fa153d3a-4038-4c08-a4db-3a3767ebf0f5",
+            "fd8ec536-a354-4a17-9c74-4f3883c378c8"
+        ]
+    },
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true
+}
