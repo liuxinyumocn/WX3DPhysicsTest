@@ -26,7 +26,11 @@
 
 在空地上方随机产生不定尺寸的方块，使其进行自由落体到地面上，方块持续产生并在地面中堆积，观测在不同设备中的渲染帧率（FPS）以及不同引擎中物理单步计算耗时(**stepSimulation**)，左图为CocosCreator3.0中效果，中图为LayaBox效果，右图为Threejs效果。
 
----////////
+<img src="https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/image/image-20210410210434454.png?raw=true" alt="image-20210410210434454" style="zoom:50%;" /><img src="https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/image/image-20210410210446343.png?raw=true" alt="image-20210410210434454" style="zoom:50%;" /><img src="https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/image/image-20210410210434254.png?raw=true" alt="image-20210410210434454" style="zoom: 25%;" />
+
+
+
+
 
 其中我们对场景中的相关参数做出如下统一设定：
 
@@ -127,13 +131,15 @@ window.global_var = {
 
 
 
-LayaBox由于引擎内部封装了物理引擎，没有暴露出 **stepSimulation** 函数的明显位置，我们依然可以在物理引擎对外提供的胶水代码中找到由渲染引擎请求物理引擎的计算位置，以本文其中一个Layabox的客户端版本为例子，其位置在： -------------------- 
+LayaBox由于引擎内部封装了物理引擎，没有暴露出 **stepSimulation** 函数的明显位置，我们依然可以在物理引擎对外提供的胶水代码中找到由渲染引擎请求物理引擎的计算位置，以本文其中一个Layabox的客户端版本为例子，其位置在：https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/Demo/Layabox_Browser_WASM/libs/min/laya.d3.min.js#L3
 
 
 
-Threejs版本中由于是由开发者手动接入物理引擎，因此直接在 stepSimulation 方法前后增加计时器计算耗时即可。其位置在：--------------------
+Threejs版本中由于是由开发者手动接入物理引擎，因此直接在 stepSimulation 方法前后增加计时器计算耗时即可。其位置在：https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/Demo/Threejs_WX_WASM/js/main.js#L219
 
-关于在小游戏环境中使用WASM版本的方法可以参考本人的另一篇文章及说明。 --------------------
+
+
+关于在小游戏环境中使用WASM版本的方法可以参考本人的另一篇文章及说明。 （待补充）
 
 
 
