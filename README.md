@@ -112,18 +112,18 @@ this.physicsWorld.syncAfterEvents();
 window.global_var = {
 		record : [],
 		push:function(timeout){
-				let n = window.global_var.num + 1;
-       	if(n % 50 <= 2){  //防止数据集过大只对num 每50 周围的帧进行获取，例如当前 num 为49、50、51 时则开始记录
-      			window.global_var.record.push([
-            		window.global_var.num,
-               	timeout
-          	])
-     		}
- 		},
- 		num:0,	//当前已经产生Cube的数量 由方块生成函数进行赋值修改
- 		print:function(){
-  			document.write(JSON.stringify(window.global_var.record));  //将记录集打印 ②
-  	}
+			let n = window.global_var.num + 1;
+      if(n % 50 <= 2){  //防止数据集过大只对num 每50 周围的帧进行获取，例如当前 num 为49、50、51 时则开始记录
+        window.global_var.record.push([
+          window.global_var.num,
+          timeout
+        ])
+      }
+    },
+	num:0,	//当前已经产生Cube的数量 由方块生成函数进行赋值修改
+  print:function(){
+    document.write(JSON.stringify(window.global_var.record));  //将记录集打印 ②
+  }
 };
 ```
 
