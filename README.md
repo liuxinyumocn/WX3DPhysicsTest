@@ -60,9 +60,9 @@ Cube:
 1. 测试设备自身的硬件性能；
 2. 场景中方块掉落位置和其尺寸的随机性导致的波动性的物理计算量；
 3. 物理引擎的计算效率；
-4. 游戏引擎内部执行效率差异等
+4. 游戏引擎内部执行效率差异等。
 
-其中对于CocosCreator3.0提供了**Bullet**物理引擎的**AmmoJS**版本以及对应的**wasm**版本，LayaBox均提供了bullet物理引擎以及对应的wasm版本，本文将针对**Ammo**物理引擎分别对他们的JS和wasm版本进行一系列的性能测试（WASM仅针对物理引擎，游戏主体仍是JS/TS）。
+其中对于CocosCreator3.0提供了 Bullet 物理引擎的 Ammo JS版本以及对应的WASM版本，LayaBox均提供了 Bullet 物理引擎以及对应的WASM版本，本文将针对Ammo物理引擎分别对他们的JS和WASM版本进行一系列的性能测试（WASM仅针对物理引擎，游戏主体仍是JS/TS）。
 
 
 
@@ -137,11 +137,11 @@ LayaBox由于引擎内部封装了物理引擎，没有暴露出 **stepSimulatio
 
 
 
-Threejs版本中由于是由开发者手动接入物理引擎，因此直接在 stepSimulation 方法前后增加计时器计算耗时即可。其位置在：https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/Demo/Threejs_WX_WASM/js/main.js#L219
+Threejs版本中由于是由开发者手动接入物理引擎，因此直接在 **stepSimulation** 方法前后增加计时器计算耗时即可。其位置在：https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/Demo/Threejs_WX_WASM/js/main.js#L219
 
 
 
-关于在小游戏环境中使用WASM版本的方法可以参考本人的另一篇文章及说明 [微信小游戏中使用Ammo (wasm版)](https://github.com/liuxinyumocn/WXGameAmmoWasm) https://github.com/liuxinyumocn/WXGameAmmoWasm。
+关于在小游戏环境中使用WASM版本的方法可以参考本人的另一篇文章及说明 [微信小游戏中使用Ammo (WASM版)](https://github.com/liuxinyumocn/WXGameAmmoWasm) https://github.com/liuxinyumocn/WXGameAmmoWasm。
 
 
 
@@ -171,7 +171,7 @@ Threejs版本：4.5 / 与Cocos Creator完全相同
 
 **测试项**：
 
-使用非wasm版本以及wasm版本的Demo在PC Chrome、PC Firefox、iPhone11 Pro Max Chrome、iPhone11 Pro Max WX、小米10 WX 中进行测试，记录每个游戏引擎在不同的运行环境中FPS值由60(＞60也算60)逐渐降低的Cube产生数量，同时也以每50个Cube为一组，观测一组Cube的总生产耗时的变化。
+使用非WASM版本以及WASM版本的Demo在PC Chrome、PC Firefox、iPhone11 Pro Max Chrome、iPhone11 Pro Max WX、小米10 WX 中进行测试，记录每个游戏引擎在不同的运行环境中FPS值由60(＞60也算60)逐渐降低的Cube产生数量，同时也以每50个Cube为一组，观测一组Cube的总生产耗时的变化。
 
 
 
@@ -196,12 +196,12 @@ Threejs版本：4.5 / 与Cocos Creator完全相同
 
 #### CocosCreator3.0实验数据
 
-注：CocosCreator3.0目前仅支持在微信小游戏中使用wasm模式，且截至本测试结束时，CocosCreator3.0的引擎分离模式下不支持wasm（自动转为js），因此必须选用非分离模式（可能需要手动完成小游戏分包工作）。
+注：CocosCreator3.0目前仅支持在微信小游戏中使用WASM模式，且截至本测试结束时，CocosCreator3.0的引擎分离模式下不支持WASM（自动转为JS），因此必须选用非分离模式（可能需要手动完成小游戏分包工作）。
 
 | 设备-运行环境              | 50Cube (FPS - ms) | 100           | 150         | 200         | 300               | 400            | 800         |
 | -------------------------- | ----------------- | ------------- | ----------- | ----------- | ----------------- | -------------- | ----------- |
 | PC Chrome - JS             | 60FPS - 1ms       | -             | -           | 60 - 4      | 60 - 6            | <u>58 - 12</u> | 43 - 19     |
-| PC Firefox - JS            | 60 - 1            | -             | -           | 60 - 5      | <u>45 - 8</u>     | 34 - 10        | 20 - 23     |
+| PC Chrome - WASM           | 暂不支持          | -             | -           | -           | -                 | -              | -           |
 | iPhone11 Pro Max WX - JS   | <u>20 - 47</u>    | 9 - 89        | 5 - 134     | 3 - 204     | 1 - 385           | -              | -           |
 | iPhone11 Pro Max WX - WASM | **<u>34 - 6</u>** | **21 - 13**   | **16 - 19** | **12 - 27** | **6 - 42**        | -              | -           |
 | 小米10 WX - JS             | 60 - 3            | <u>58 - 9</u> | 58 - 11     | 58 - 11     | 52 - 15           | 37 - 20        | 16 - 49     |
@@ -211,10 +211,12 @@ Threejs版本：4.5 / 与Cocos Creator完全相同
 
 #### Threejs实验数据
 
-Threejs是渲染引擎，在本文中作为游戏引擎的实验数据参照，因此单独对Threejs在微信小游戏中的性能进行测试并记录。注：Threejs版本中的ammo的wasm版本与Cocos Creator3.0中使用的完全相同。
+Threejs是渲染引擎，在本文中作为游戏引擎的实验数据参照，因此单独对Threejs在微信小游戏中的性能进行测试并记录。注：Threejs版本中的Ammo的WASM版本与Cocos Creator3.0中使用的完全相同。
 
 | 设备-运行环境              | 50Cube (FPS - ms) | 100            | 150       | 200                | 400         | 800                |
 | -------------------------- | ----------------- | -------------- | --------- | ------------------ | ----------- | ------------------ |
+| PC Chrome - JS             | 60FPS - 1ms       | 60 - 1         | -         | -                  | 60 - 7      | <u>45 - 22</u>     |
+| PC Chrome - WASM           | 60 - 1            | 60 - 1         | -         | -                  | 60 - 4      | **<u>57 -13</u>**  |
 | iPhone11 Pro Max WX - JS   | 60 - 15           | <u>25 - 37</u> | 16 - 63   | 10 - 88            | 4 - 230     | -                  |
 | iPhone11 Pro Max WX - WASM | 60 - 2            | **60 - 5**     | **60 -8** | <u>**49 - 13**</u> | **22 - 28** | **9 - 66**         |
 | 小米10 WX - JS             | 60 - 2            | 60 - 5         | 60 - 6    | 60 - 8             | 60 - 12     | **<u>52 - 16</u>** |
@@ -229,8 +231,8 @@ Threejs是渲染引擎，在本文中作为游戏引擎的实验数据参照，�
 上述实验中选用目前小米10（1档Android机型）与iPhone11 Pro Max（1档iOS机型）进行测试，并使用Chrome浏览器以及Threejs版本的测试用例作为对照，总结如下：
 
 1. 在原生浏览器以及安卓微信小游戏（即非iOS微信小游戏）环境中，所有测试样例均表现出较好了性能表现，在200个刚体下能够基本能保持稳定的渲染效果，适用于一般的小游戏场景的设计；
-2. 在各个测试样例中，使用wasm版本的物理引擎均有效的提升游戏的渲染性能1～3倍，这是在不需要改变游戏内在结构的情况下，一种快捷有效的性能优化手段，推荐开发者优先使用wasm版的物理引擎；
-3. iOS微信小游戏由于没有JIT，因此在各个渲染引擎中相比其他环境性能上均稍有逊色，但从js与wasm的对照中可知，使用wasm版物理引擎可较明显的改善性能的损失。
+2. 在各个测试样例中，使用WASM版本的物理引擎均有效的提升游戏的渲染性能1～3倍，这是在不需要改变游戏内在结构的情况下，一种快捷有效的性能优化手段，推荐开发者优先使用WASM版的物理引擎；
+3. iOS微信小游戏由于没有JIT，因此在各个渲染引擎中相比其他环境性能上均稍有逊色，但从JS与WASM的对照中可知，使用WASM版物理引擎可较明显的改善性能的损失。
 
 
 
