@@ -58828,17 +58828,10 @@ System.register([], function (exports, module) {
                 }
               }
 
-              console.log(333333,Ammo)
-              setTimeout(()=>{
-                    console.log(2222,Ammo);
-              });
-
               return new Promise(function (resolve, reject) {
-                    console.log(1111,Ammo);
-                // ammo_wasm$1.call(ammoClosureThis, Ammo).then(function () {
-                //     console.log(1111,Ammo);
-                //   resolve();
-                // });
+                ammo_wasm$1.call(ammoClosureThis, Ammo).then(function () {
+                  resolve();
+                });
               });
             }
 

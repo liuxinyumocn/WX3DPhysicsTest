@@ -35647,19 +35647,20 @@ System.register(['./ammo-instantiated-cabff29e.js'], function (exports) {
 
                   while (this._subStepCount < this._maxSubSteps) {
                     if (this._accumulator > this._fixedTimeStep) {
-                      
+                      this.physicsWorld.syncSceneToPhysics();
+
                       let start = new Date().getTime();
 
-                      this.physicsWorld.syncSceneToPhysics();
                       this.physicsWorld.step(this._fixedTimeStep);
+                      
+                      let end = new Date().getTime();
+                      let d= end - start;
+                      global.default.push(d);
+
                       this._accumulator -= this._fixedTimeStep;
                       this._subStepCount++;
                       this.physicsWorld.emitEvents();
                       this.physicsWorld.syncAfterEvents();
-
-                      let end = new Date().getTime();
-                      let d= end - start;
-                      global.default.push(d);
 
                     } else {
                       this.physicsWorld.syncSceneToPhysics();

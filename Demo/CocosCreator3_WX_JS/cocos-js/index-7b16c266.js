@@ -525,17 +525,17 @@ System.register(["./coordinates-converts-utils-bf8713a9.js", "./index-6f89fc06.j
                                     this.physicsWorld.syncSceneToPhysics();
                                     break
                                 }
+                                this.physicsWorld.syncSceneToPhysics();
                                 let start = new Date().getTime();
-                                this.physicsWorld.syncSceneToPhysics(),
-                                this.physicsWorld.step(this._fixedTimeStep),
-                                this._accumulator -= this._fixedTimeStep,
-                                this._subStepCount++,
-                                this.physicsWorld.emitEvents(),
-                                this.physicsWorld.syncAfterEvents();
-                                
+                                this.physicsWorld.step(this._fixedTimeStep);
                                 let end = new Date().getTime();
                                 let d= end - start;
                                 global.push(d);
+                                this._accumulator -= this._fixedTimeStep;
+                                this._subStepCount++;
+                                this.physicsWorld.emitEvents();
+                                this.physicsWorld.syncAfterEvents();
+                                
                             
                             }
                             I.emit(B.EVENT_AFTER_PHYSICS)

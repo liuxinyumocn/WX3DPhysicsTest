@@ -122,7 +122,7 @@ System.register("chunks:///_virtual/cube_script.ts", ['cc'], function (exports) 
               this.lastTimestamp = now;
             }
 
-            if (this.cubeNumber >= 402) {
+            if (this.cubeNumber >= 802) {
                 global.print();
                 this.unschedule(this.scheduleTaskHandler);
             }
