@@ -171,7 +171,7 @@ Threejs版本：4.5 / 与Cocos Creator完全相同
 
 **测试项**：
 
-使用 非WASM 版本以及 WASM 版本的 Demo 在 PC Chrome、PC Firefox、iPhone11 Pro Max Chrome、iPhone11 Pro Max WX、小米10 WX 中进行测试，记录每个游戏引擎在不同的运行环境中 FPS 值由 60 (＞60 也算 60) 逐渐降低的 Cube 产生数量，同时也以每50个 Cube 为一组，观测一组 Cube 的总生产耗时的变化。
+使用 非WASM 版本以及 WASM 版本的 Demo 在 PC Chrome、PC Firefox、iPhone11 Pro Max Chrome、iPhone11 Pro Max WX、小米10 WX 中进行测试，记录每个游戏引擎在不同的运行环境中 FPS 值由 60 (＞60 也算 60) 逐渐降低的 Cube 产生数量，同时也以每50个 Cube 为一组，观测一组 Cube 的物理单步计算耗时。
 
 
 
