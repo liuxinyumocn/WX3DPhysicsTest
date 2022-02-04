@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.21",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "2be7023c-e260-4679-b99e-1ffb0b1a4a72",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "importAsPlugin": false,
+    "moduleId": "project:///assets/cube_script.js",
+    "importerSettings": 0
+  }
+}
