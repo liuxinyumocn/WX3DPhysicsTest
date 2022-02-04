@@ -26,7 +26,7 @@
 
 在空地上方随机产生不定尺寸的方块，使其进行自由落体到地面上，方块持续产生并在地面中堆积，观测在不同设备中的渲染帧率（**FPS**）以及不同引擎中物理单步计算耗时(**stepSimulation**)，左图为 CocosCreator3.0 中效果，中图为 LayaBox 效果，右图为 Three.js 效果。
 
-<img src="https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/image/image-20210410210434454.png?raw=true" alt="image-20210410210434454" width="200" /><img src="https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/image/image-20210410210446343.png?raw=true" alt="image-20210410210434454" width="200" /><img src="https://github.com/liuxinyumocn/WX3DPhysicsTest/blob/master/image/image-20210410210434254.png?raw=true" alt="image-20210410210434454" width="200" />
+<img src="image/image-20210410210434454.png" alt="image-20210410210434454" width="200" /><img src="image/image-20210410210446343.png?raw=true" alt="image-20210410210434454" width="200" /><img src="image/image-20210410210434254.png?raw=true" alt="image-20210410210434454" width="200" />
 
 
 
